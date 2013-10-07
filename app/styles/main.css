@@ -1,6 +1,6 @@
 body {
     background: rgb(82,43,82);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "bebas_neueregular", Helvetica, Arial, sans-serif;
     color: #333;
 }
 
@@ -25,12 +25,105 @@ right : 0px;
 }
 
 #title {
-    font-family: 'bebas_neueregular';
-    width: 600px;
-    height: 50px;
-    font-size : 50px;
-    color: white;
+  
+  width: 680px;
+height: 50px;
+font-size: 50px;
+color: white;
+position: absolute;
+right: 0px;
+
+padding: 5px;
+background-color: black;
+text-align: center;
+}
+
+#title2 {
+    
+width: 680px;
+height: 50px;
+font-size: 50px;
+color: white;
+position: absolute;
+right: 0px;
+margin-top: 350px;
+padding: 5px;
+background-color: black;
+text-align: center;
+}
+
+#rt {
     position : absolute;
-    right : 0px;
-    margin-top:15px;
+    right : 180px;
+    top:90px;
+}
+
+#hash {
+    position : absolute;
+    right : -35px;
+    top:90px;
+}
+
+#urls {
+     position : absolute;
+    right : -250px;
+    top:90px;
+}
+
+#TitleContain{
+     position : absolute;
+
+    right : 200px;
+    top:90px;
+   
+    font-size : 30px;
+}
+
+.subtitles {
+color : #4B0082;
+font-size: 30px;
+position: absolute;
+
+}
+
+#TitleContain{
+     position : absolute;
+
+    right : 200px;
+    top:90px;
+   
+    font-size : 25px;
+    color:black;
+}
+#titlert{
+ right: 525px;
+top: 280px;
+}
+
+#titleHash{
+ right: 275px;
+top: 280px;
+}
+
+#titleurls{
+ right: 88px;
+top: 280px;
+}
+
+#most{
+  position: absolute;
+right: 72px;
+top: 450px;
+font-size: 25px;
+color: black;
+width: 537px;
+}
+
+#rtWith{
+  position: absolute;
+right: -100px;
+top: 536px;
+font-size: 50px;
+color: white;
+width: 537px;
 }

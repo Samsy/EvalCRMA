@@ -2,78 +2,116 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>eval</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-    </head>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-            <script src="http://127.0.0.1:9003/socket.io/socket.io.js"></script>
-        <script>
-          var socket = io.connect('http://127.0.0.1:9003');
-          socket.on('tweet', function (data) {
-            oneMoreTweet(data);
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eval</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
 
 
-           
-          });
-        </script>
 
-    <body>
+<!-- Socket : oneMoreTweet Function for each emit from the webserverTwitter-->
+<script src="http://127.0.0.1:9003/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect('http://127.0.0.1:9003');
+socket.on('tweet', function(data) {
+    oneMoreTweet(data);
+
+
+
+});
+</script>
+
+<body>
     <div id="holder"></div>
 
-    <div id= "title"> TWEETS CONTAININGS FUTURE ARE </div>
+    <div id="title">TWEETS CONTAININGS GOD ARE</div>
+    <div id="rt"></div>
+    <div id="hash"></div>
+    <div id='urls'></div>
 
-    </body>
+    <div id='TitleContain'>
+        MESSAGES CONTAINING GOD CONTAINS A
+    </div>
 
-        <!--[if lt IE 10]>
+    <div class='subtitles' id='titlert'>
+
+    </div>
+
+    <div class='subtitles' id='titleHash'>
+
+    </div>
+
+    <div class='subtitles' id='titleurls'>
+
+    </div>
+
+    <div id="title2">THE MOST RETWEETED MESSAGE WAS</div>
+
+    <div id="most"></div>
+
+    <div id="rtWith">
+
+        WITH 420 RT
+    </div>
+
+
+</body>
+
+<!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
 
-                
-        <script id="tweetAppend" type="text/x-handlebars-template"> 
-        <p> my TEXT is {{text}} </p>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/raphael/raphael.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-        </script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+        function() {
+            (b[l].q = b[l].q || []).push(arguments)
+        });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+}(window, document, 'script', 'ga'));
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
+</script>
 
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/raphael/raphael.js"></script>
-         <script src="bower_components/d3/d3.js"></script>
-         <script src="bower_components/handlebars/handlebars.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
+<!-- build:js scripts/main.js -->
+<script src="scripts/graphael.js"></script>
+<script src="scripts/raphaelPie.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/canvas.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/canvas.js"></script>
-           <script src="scripts/graphael.js"></script>
-              <script src="scripts/raphaelPie.js"></script>
-        <script src="scripts/templateHandle.js"></script>
-            <script src="scripts/SvgRender.js"></script>
+<script src="scripts/templateHandle.js"></script>
+<script src="scripts/SvgRender.js"></script>
 
 
-        <!-- endbuild -->
+<!-- endbuild -->
+
 </html>
