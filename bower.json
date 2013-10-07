@@ -1,0 +1,13 @@
+{
+  "name": "eval",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "socket.io": "~0.9.15",
+    "raphael": "~2.1.2",
+    "d3": "~3.3.6",
+    "handlebars": "~1.0.0"
+  },
+  "devDependencies": {}
+}
