@@ -1,45 +1,91 @@
 
 
+var index = 0;
+var urlsNb =0;
+var hashtags = 0;
+var reply=0;
+var retweet =0;
+var geo =0;
+var replytoUser=0;
+// svgInit();
 
 
-var svgInit = function () {
 
-    // Creates circle at x = 50, y = 40, with radius 10
-var circle = paper.circle(0, 40, 10);
-// Sets the fill attribute of the circle to red (#f00)
-circle.attr("fill", "#f00");
 
-// Sets the stroke attribute of the circle to white
-circle.attr("stroke", "#fff");
 
-};
+
 
 
 
 var oneMoreTweet = function(data) {
 
-    
+    index +=1;
+   
     //RenderTweet(data.text);
 
 
-       // $('body').append(template(data));
+    // $('body').append(template(data));
+    particleArray.push( new Particle( 0, Math.floor((Math.random() * SCREEN_HEIGHT) + 1, index)));
+   
+
+
+    if(data.entities.urls.length>0)
+    {
+        urlsNb +=1;
+        // console.log(" URLS ");
+
+        // console.log(parseInt(urlsNb *100 / index));
+
+    }
+
+      if(data.entities.hashtags.length>0)
+    {
+        hashtags+=1;
+     
+         // console.log(parseInt(hashtags *100 / index));
+        
+    }
+
+          if(data.entities.user_mentions>0)
+    {
+        reply+=1;
+        // console.log(parseInt(reply *100 / index));
+        
+    }
+
+
+           if(data.in_reply_to_user_id)
+    {
+        replytoUser+=1;
+        // console.log(parseInt(replytoUser *100 / index));
+        
+    }
+
+
+              if(data.retweeted_status)
+    {
+        // console.log(" RETWEET ");
+        retweet+=1;
+         // console.log(parseInt(retweet *100 / index));
+        
+    }
+
+                  if(data.place)
+    {
+        // console.log(" Place GEO ");
+        geo+=1;
+         // console.log(parseInt(geo *100 / index));
+        
+    }
+
+
+
+
+
+
+
 
 }
 
-var RenderTweet = function(dataText) {
-    var infos = d3.select('body').append('div')
-                .data(dataText)
-                
-               
-
-    var p = infos.append('p');
-
-    p.attr('class','tweet').text(dataText);
-};
 
 
-// Creates canvas 320 × 200 at 10, 50
-
-var paper = Raphael('holder');
-
-svgInit();
